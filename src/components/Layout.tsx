@@ -16,7 +16,7 @@ const Layout: React.FC = () => {
             </li>
             <li>
               <Link to="/about" className="hover:text-gray-300">
-                À propos
+                L'Orchestre
               </Link>
             </li>
             <li>

@@ -7,7 +7,7 @@ interface RouteTitleMap {
 
 const routeTitleMap: RouteTitleMap = {
   '/': 'Accueil',
-  '/about': 'À propos',
+  '/about': "L'Orchestre",
   '/concerts': 'Concerts',
   '/contact': 'Contact',
 }
