@@ -1,7 +1,7 @@
 function ConcertsPage() {
   return (
     <>
-      <h1>Concerts Page</h1>
+      <h1>Concerts</h1>
     </>
   )
 }
