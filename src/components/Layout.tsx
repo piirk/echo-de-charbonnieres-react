@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 const Layout: React.FC = () => {
   return (
@@ -8,16 +8,24 @@ const Layout: React.FC = () => {
         <nav className="container mx-auto">
           <ul className="flex space-x-4">
             <li>
-              <Link to="/" className="hover:text-gray-300">Accueil</Link>
+              <Link to="/" className="hover:text-gray-300">
+                Accueil
+              </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-gray-300">À Propos</Link>
+              <Link to="/about" className="hover:text-gray-300">
+                À Propos
+              </Link>
             </li>
             <li>
-              <Link to="/concerts" className="hover:text-gray-300">Concerts</Link>
+              <Link to="/concerts" className="hover:text-gray-300">
+                Concerts
+              </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-gray-300">Contact</Link>
+              <Link to="/contact" className="hover:text-gray-300">
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
@@ -29,7 +37,7 @@ const Layout: React.FC = () => {
         <p>&copy; {new Date().getFullYear()} Écho de Charbonnières</p>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
