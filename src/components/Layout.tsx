@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import PageTitle from './PageTitle'
 
 const Layout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <PageTitle />
       <header className="bg-gray-800 text-white p-4">
         <nav className="container mx-auto">
           <ul className="flex space-x-4">
