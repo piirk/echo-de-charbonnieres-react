@@ -22,7 +22,7 @@ L'ancien site web peut présenter des limitations en termes de design, de foncti
 *   **Framework Front-end :** React
 *   **Langage :** TypeScript
 *   **Outil de Build :** Vite
-*   **Styling Envisagé :** *À définir - Plusieurs options sont à l'étude (CSS Modules, Styled Components, Tailwind CSS...)*
+*   **Styling :** Tailwind CSS
 *   **Gestion de Version :** Git et GitHub
 
 ## Fonctionnalités Clés (Initiales)
@@ -37,7 +37,6 @@ L'ancien site web peut présenter des limitations en termes de design, de foncti
 
 ## Décisions à Prendre
 
-*   **Styling:** Quelle méthode de styling utiliser (CSS Modules, Styled Components, Tailwind CSS, etc.) ?
 *   **Page "Musiciens":** Quelle forme donner à cette page ? Liste simple ou fiches détaillées ?
 *   **Page "Répertoire":** Faut-il inclure cette page dans la première version ?
 *   **Galerie Multimédia:** Est-ce que la galerie sera présente dans la première version ?
@@ -49,10 +48,10 @@ Voici les prochaines étapes prévues pour le développement du site :
 1.  **Création de la structure de base :** Définir l'arborescence des composants et des pages (en se basant sur la section "Structure du Projet").
 2.  **Mise en place du routage :** Implémenter la navigation entre les différentes pages avec une librairie comme `react-router-dom`.
 3.  **Développement des composants :** Créer les composants pour chaque section du site (en commençant par les pages principales : Accueil, À Propos, Concerts, etc.).
-4.  **Intégration du style visuel :** Appliquer le design et l'identité visuelle de l'orchestre.
+4.  **Intégration du style visuel :** Appliquer le design et l'identité visuelle de l'orchestre avec Tailwind CSS.
 5.  **Ajout de contenu :** Intégrer les textes, images, et autres médias.
-6. **Implémentation des fonctionnalités:** Implémenter les fonctionnalités de chaque page.
-7. **Tests et corrections:** Tester le site et corriger les bugs.
+6.  **Implémentation des fonctionnalités:** Implémenter les fonctionnalités de chaque page.
+7.  **Tests et corrections:** Tester le site et corriger les bugs.
 
 ## Comment Lancer le Projet Localement
 
