@@ -19,9 +19,7 @@ const Layout: React.FC = () => {
       <header className="bg-gray-800 text-white p-4">
         <nav className="container mx-auto">
           <div className="flex justify-between items-center relative">
-            <div className="text-xl font-bold">
-              Écho de Charbonnières
-            </div>
+            <div className="text-xl font-bold">Écho de Charbonnières</div>
             <button
               onClick={toggleMenu}
               className="md:hidden p-2 hover:bg-gray-700 rounded"
@@ -50,24 +48,42 @@ const Layout: React.FC = () => {
                 )}
               </svg>
             </button>
-            <ul className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-4 absolute md:relative top-full md:top-auto right-0 md:right-auto w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0`}>
+            <ul
+              className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-4 absolute md:relative top-full md:top-auto right-0 md:right-auto w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0`}
+            >
               <li className="py-2 md:py-0">
-                <Link to="/" className="hover:text-gray-300 block" onClick={closeMenu}>
+                <Link
+                  to="/"
+                  className="hover:text-gray-300 block"
+                  onClick={closeMenu}
+                >
                   Accueil
                 </Link>
               </li>
               <li className="py-2 md:py-0">
-                <Link to="/about" className="hover:text-gray-300 block" onClick={closeMenu}>
+                <Link
+                  to="/about"
+                  className="hover:text-gray-300 block"
+                  onClick={closeMenu}
+                >
                   L'Orchestre
                 </Link>
               </li>
               <li className="py-2 md:py-0">
-                <Link to="/concerts" className="hover:text-gray-300 block" onClick={closeMenu}>
+                <Link
+                  to="/concerts"
+                  className="hover:text-gray-300 block"
+                  onClick={closeMenu}
+                >
                   Concerts
                 </Link>
               </li>
               <li className="py-2 md:py-0">
-                <Link to="/contact" className="hover:text-gray-300 block" onClick={closeMenu}>
+                <Link
+                  to="/contact"
+                  className="hover:text-gray-300 block"
+                  onClick={closeMenu}
+                >
                   Contact
                 </Link>
               </li>

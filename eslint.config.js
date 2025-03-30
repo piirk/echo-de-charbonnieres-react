@@ -41,35 +41,48 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       'prettier/prettier': 'error',
-      
+
       // Règles TypeScript
       '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/no-unused-vars': ['error', { 
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_'
-      }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
       '@typescript-eslint/no-explicit-any': 'warn',
-      
+
       // Règles React
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      
+
       // Règles générales
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'no-debugger': 'warn',
       'no-duplicate-imports': 'error',
       'no-unused-vars': 'off', // Désactivé en faveur de la règle TypeScript
-      
+
       // Règles d'import
-      'import/order': ['error', {
-        'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        'newlines-between': 'always',
-        'alphabetize': { 'order': 'asc' }
-      }],
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+          ],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc' },
+        },
+      ],
       'import/no-duplicates': 'error',
       'import/no-unresolved': 'error',
-      'import/named': 'error'
+      'import/named': 'error',
     },
     settings: {
       react: {

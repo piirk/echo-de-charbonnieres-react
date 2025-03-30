@@ -9,10 +9,7 @@ const __dirname = dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(), 
-    tailwindcss()
-  ],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
@@ -21,13 +18,13 @@ export default defineConfig({
       '@hooks': resolve(__dirname, './src/hooks'),
       '@utils': resolve(__dirname, './src/utils'),
       '@types': resolve(__dirname, './src/types'),
-      '@assets': resolve(__dirname, './src/assets')
-    }
+      '@assets': resolve(__dirname, './src/assets'),
+    },
   },
   server: {
     port: 3000,
     open: true,
-    host: true
+    host: true,
   },
   build: {
     outDir: 'dist',
@@ -37,9 +34,9 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['@headlessui/react', '@heroicons/react']
-        }
-      }
-    }
-  }
+          'ui-vendor': ['@headlessui/react', '@heroicons/react'],
+        },
+      },
+    },
+  },
 })
