@@ -76,7 +76,7 @@ const ConcertsPage = () => {
         </section>
 
         {/* Concerts passés */}
-        <section>
+        <section className="mb-12">
           <h2 className="text-2xl font-serif mb-6">Concerts passés</h2>
           <div className="grid gap-6">
             {pastConcerts.map((concert) => (
@@ -98,10 +98,8 @@ const ConcertsPage = () => {
             ))}
           </div>
         </section>
-      </main>
 
-      {/* Information Box */}
-      <div className="max-w-6xl mx-auto px-4">
+        {/* Information Box */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
           <h3 className="text-xl font-semibold mb-4">Informations pratiques</h3>
           <ul className="space-y-2 text-gray-700">
@@ -111,7 +109,7 @@ const ConcertsPage = () => {
             <li>• Les dons sont les bienvenus pour soutenir l'association</li>
           </ul>
         </div>
-      </div>
+      </main>
     </>
   )
 }
