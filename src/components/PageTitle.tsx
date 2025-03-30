@@ -1,31 +1,13 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 
-interface RouteTitleMap {
-  [key: string]: string
+interface PageTitleProps {
+  title: string
 }
 
-const routeTitleMap: RouteTitleMap = {
-  '/': 'Accueil',
-  '/about': "L'Orchestre",
-  '/concerts': 'Concerts',
-  '/contact': 'Contact',
-}
-
-function PageTitle() {
-  const location = useLocation()
-
+const PageTitle: React.FC<PageTitleProps> = ({ title }) => {
   useEffect(() => {
-    const path = location.pathname
-    const pageTitle = routeTitleMap[path]
-    const baseTitle = 'Écho de Charbonnières'
-
-    if (pageTitle) {
-      document.title = `${baseTitle} | ${pageTitle}`
-    } else {
-      document.title = `${baseTitle} | Page non trouvée`
-    }
-  }, [location])
+    document.title = `L'Écho de Charbonnières | ${title}`
+  }, [title])
 
   return null
 }

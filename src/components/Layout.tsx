@@ -1,9 +1,25 @@
 import React, { useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import PageTitle from './PageTitle'
 
 const Layout: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+
+  const getPageTitle = () => {
+    switch (location.pathname) {
+      case '/':
+        return 'Accueil'
+      case '/about':
+        return "L'Orchestre"
+      case '/concerts':
+        return 'Concerts'
+      case '/contact':
+        return 'Contact'
+      default:
+        return 'Page non trouvée'
+    }
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -14,15 +30,19 @@ const Layout: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <PageTitle />
-      <header className="bg-gray-800 text-white p-4">
-        <nav className="container mx-auto">
-          <div className="flex justify-between items-center relative">
-            <div className="text-xl font-bold">Écho de Charbonnières</div>
+    <div className="min-h-screen flex flex-col">
+      <PageTitle title={getPageTitle()} />
+      <header className="bg-amber-800 text-white">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <Link to="/" className="text-2xl font-serif">
+              L'Écho de Charbonnières
+            </Link>
+            
+            {/* Menu burger pour mobile */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 hover:bg-gray-700 rounded"
+              className="md:hidden p-2 hover:bg-amber-700 rounded-lg"
               aria-label="Menu"
             >
               <svg
@@ -48,40 +68,70 @@ const Layout: React.FC = () => {
                 )}
               </svg>
             </button>
-            <ul
-              className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-4 absolute md:relative top-full md:top-auto right-0 md:right-auto w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0`}
-            >
-              <li className="py-2 md:py-0">
+
+            {/* Menu desktop */}
+            <ul className="hidden md:flex space-x-6">
+              <li>
+                <Link to="/" className="hover:text-amber-200">
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-amber-200">
+                  L'orchestre
+                </Link>
+              </li>
+              <li>
+                <Link to="/concerts" className="hover:text-amber-200">
+                  Concerts
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-amber-200">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Menu mobile */}
+          <div
+            className={`md:hidden transition-all duration-300 ease-in-out ${
+              isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+            } overflow-hidden`}
+          >
+            <ul className="py-4 space-y-4">
+              <li>
                 <Link
                   to="/"
-                  className="hover:text-gray-300 block"
+                  className="block hover:text-amber-200"
                   onClick={closeMenu}
                 >
                   Accueil
                 </Link>
               </li>
-              <li className="py-2 md:py-0">
+              <li>
                 <Link
                   to="/about"
-                  className="hover:text-gray-300 block"
+                  className="block hover:text-amber-200"
                   onClick={closeMenu}
                 >
-                  L'Orchestre
+                  L'orchestre
                 </Link>
               </li>
-              <li className="py-2 md:py-0">
+              <li>
                 <Link
                   to="/concerts"
-                  className="hover:text-gray-300 block"
+                  className="block hover:text-amber-200"
                   onClick={closeMenu}
                 >
                   Concerts
                 </Link>
               </li>
-              <li className="py-2 md:py-0">
+              <li>
                 <Link
                   to="/contact"
-                  className="hover:text-gray-300 block"
+                  className="block hover:text-amber-200"
                   onClick={closeMenu}
                 >
                   Contact
@@ -91,11 +141,43 @@ const Layout: React.FC = () => {
           </div>
         </nav>
       </header>
-      <main className="flex-grow container mx-auto p-4">
+
+      <main className="flex-grow container mx-auto px-4 py-8">
         <Outlet />
       </main>
-      <footer className="bg-gray-800 text-white p-4 text-center">
-        <p>&copy; {new Date().getFullYear()} Écho de Charbonnières</p>
+
+      <footer className="bg-gray-800 text-white">
+        <div className="container mx-auto px-4 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">L'Écho de Charbonnières</h3>
+              <p className="text-gray-300">
+                Orchestre harmonique de campagne
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact</h3>
+              <p className="text-gray-300">
+                Email: contact@echodecharbonnieres.fr<br />
+                Tél: 01 23 45 67 89
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-300 hover:text-white">
+                  Facebook
+                </a>
+                <a href="#" className="text-gray-300 hover:text-white">
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-300">
+            <p>&copy; {new Date().getFullYear()} L'Écho de Charbonnières. Tous droits réservés.</p>
+          </div>
+        </div>
       </footer>
     </div>
   )
