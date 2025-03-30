@@ -5,6 +5,14 @@
     "trailingComma": "es5",
     "printWidth": 80,
     "bracketSpacing": true,
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "endOfLine": "auto",
+    "jsxSingleQuote": false,
+    "quoteProps": "as-needed",
+    "useTabs": false,
+    "bracketSameLine": false,
+    "htmlWhitespaceSensitivity": "css",
+    "embeddedLanguageFormatting": "auto",
+    "singleAttributePerLine": false
   }
   
