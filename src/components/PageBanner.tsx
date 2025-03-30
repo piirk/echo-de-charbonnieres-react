@@ -5,12 +5,15 @@ type PageBannerProps = {
 
 const PageBanner = ({ title, subtitle }: PageBannerProps) => {
   return (
-    <div className="relative h-64 bg-amber-900">
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative h-full flex items-center justify-center">
-        <div className="text-center text-white">
-          <h1 className="text-5xl font-serif mb-4">{title}</h1>
-          {subtitle && <p className="text-xl">{subtitle}</p>}
+    <div className="w-full bg-amber-900">
+      <div className="relative w-full h-64">
+        <div className="absolute inset-0 bg-black/40">
+          <div className="container mx-auto h-full px-4 flex flex-col justify-center items-center text-center">
+            <h1 className="text-5xl font-serif text-white mb-4">{title}</h1>
+            {subtitle && (
+              <p className="text-xl text-white/90">{subtitle}</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
