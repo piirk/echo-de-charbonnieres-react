@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
 
 type Concert = {
@@ -12,8 +11,6 @@ type Concert = {
 }
 
 const ConcertsPage = () => {
-  const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming')
-
   const concerts: Concert[] = [
     {
       id: 1,
@@ -44,9 +41,8 @@ const ConcertsPage = () => {
     },
   ]
 
-  const filteredConcerts = concerts.filter(concert => 
-    activeTab === 'upcoming' ? !concert.isPast : concert.isPast
-  )
+  const upcomingConcerts = concerts.filter(concert => !concert.isPast)
+  const pastConcerts = concerts.filter(concert => concert.isPast)
 
   return (
     <>
@@ -59,25 +55,23 @@ const ConcertsPage = () => {
         <section className="mb-12">
           <h2 className="text-2xl font-serif mb-6">Prochains concerts</h2>
           <div className="grid gap-6">
-            {concerts
-              .filter(concert => !concert.isPast)
-              .map((concert, index) => (
-                <div key={index} className="bg-white shadow-lg rounded-lg p-6">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-amber-800 mb-2">{concert.title}</h3>
-                      <p className="text-gray-600 mb-2">{concert.location}</p>
-                      <p className="text-gray-700">{concert.description}</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-lg font-semibold text-amber-800">{concert.date}</div>
-                      <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm mt-2">
-                        À venir
-                      </div>
+            {upcomingConcerts.map((concert) => (
+              <div key={concert.id} className="bg-white shadow-lg rounded-lg p-6">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-xl font-semibold text-amber-800 mb-2">{concert.title}</h3>
+                    <p className="text-gray-600 mb-2">{concert.location}</p>
+                    <p className="text-gray-700">{concert.description}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg font-semibold text-amber-800">{concert.date}</div>
+                    <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm mt-2">
+                      À venir
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -85,25 +79,23 @@ const ConcertsPage = () => {
         <section>
           <h2 className="text-2xl font-serif mb-6">Concerts passés</h2>
           <div className="grid gap-6">
-            {concerts
-              .filter(concert => concert.isPast)
-              .map((concert, index) => (
-                <div key={index} className="bg-gray-50 shadow rounded-lg p-6">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">{concert.title}</h3>
-                      <p className="text-gray-600 mb-2">{concert.location}</p>
-                      <p className="text-gray-700">{concert.description}</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-lg font-semibold text-gray-800">{concert.date}</div>
-                      <div className="inline-block px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm mt-2">
-                        Passé
-                      </div>
+            {pastConcerts.map((concert) => (
+              <div key={concert.id} className="bg-gray-50 shadow rounded-lg p-6">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{concert.title}</h3>
+                    <p className="text-gray-600 mb-2">{concert.location}</p>
+                    <p className="text-gray-700">{concert.description}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg font-semibold text-gray-800">{concert.date}</div>
+                    <div className="inline-block px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm mt-2">
+                      Passé
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
         </section>
       </main>
