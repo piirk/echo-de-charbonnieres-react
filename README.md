@@ -29,6 +29,7 @@ L'ancien site web peut présenter des limitations en termes de design, de foncti
 - **Tests :** Vitest v1.3.1
 - **Linting :** ESLint v9.21.0
 - **Formatage :** Prettier v3.5.3
+- **Gestion des Formulaires :** React Hook Form (planifié pour la partie administration)
 
 ## État du Projet
 
