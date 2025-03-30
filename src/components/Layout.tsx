@@ -40,13 +40,15 @@ const Layout: React.FC = () => {
     setIsMenuOpen(false)
   }
 
+  const isActive = (path: string) => location.pathname === path
+
   return (
     <div className="min-h-screen flex flex-col">
       <PageTitle title={getPageTitle()} />
-      <header className="bg-amber-800 text-white">
-        <nav className="container mx-auto px-4 py-4">
+      <header className="bg-white shadow-sm">
+        <nav className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-serif flex items-center gap-2">
+            <Link to="/" className="text-2xl font-serif flex items-center gap-2 text-amber-800">
               <RiMusic2Line className="w-8 h-8" />
               L'Écho de Charbonnières
             </Link>
@@ -54,7 +56,7 @@ const Layout: React.FC = () => {
             {/* Menu burger pour mobile */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 hover:bg-amber-700 rounded-lg"
+              className="md:hidden p-2 hover:bg-amber-50 rounded-lg text-amber-800"
               aria-label="Menu"
             >
               {isMenuOpen ? (
@@ -67,23 +69,63 @@ const Layout: React.FC = () => {
             {/* Menu desktop */}
             <ul className="hidden md:flex space-x-8">
               <li>
-                <Link to="/" className="hover:text-amber-200 text-lg">
+                <Link 
+                  to="/" 
+                  className={`relative py-2 text-lg font-medium transition-colors
+                    ${isActive('/') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
+                >
                   Accueil
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-amber-800 transform transition-transform duration-300
+                    ${isActive('/') ? 'scale-x-100' : 'scale-x-0'}`}
+                  />
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-amber-200 text-lg">
+                <Link 
+                  to="/about" 
+                  className={`relative py-2 text-lg font-medium transition-colors
+                    ${isActive('/about') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
+                >
                   L'orchestre
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-amber-800 transform transition-transform duration-300
+                    ${isActive('/about') ? 'scale-x-100' : 'scale-x-0'}`}
+                  />
                 </Link>
               </li>
               <li>
-                <Link to="/concerts" className="hover:text-amber-200 text-lg">
+                <Link 
+                  to="/concerts" 
+                  className={`relative py-2 text-lg font-medium transition-colors
+                    ${isActive('/concerts') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
+                >
                   Concerts
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-amber-800 transform transition-transform duration-300
+                    ${isActive('/concerts') ? 'scale-x-100' : 'scale-x-0'}`}
+                  />
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-amber-200 text-lg">
+                <Link 
+                  to="/contact" 
+                  className={`relative py-2 text-lg font-medium transition-colors
+                    ${isActive('/contact') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
+                >
                   Contact
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-amber-800 transform transition-transform duration-300
+                    ${isActive('/contact') ? 'scale-x-100' : 'scale-x-0'}`}
+                  />
                 </Link>
               </li>
             </ul>
@@ -99,7 +141,11 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/"
-                  className="block hover:text-amber-200 text-lg"
+                  className={`block text-lg font-medium transition-colors
+                    ${isActive('/') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
                   onClick={closeMenu}
                 >
                   Accueil
@@ -108,7 +154,11 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/about"
-                  className="block hover:text-amber-200 text-lg"
+                  className={`block text-lg font-medium transition-colors
+                    ${isActive('/about') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
                   onClick={closeMenu}
                 >
                   L'orchestre
@@ -117,7 +167,11 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/concerts"
-                  className="block hover:text-amber-200 text-lg"
+                  className={`block text-lg font-medium transition-colors
+                    ${isActive('/concerts') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
                   onClick={closeMenu}
                 >
                   Concerts
@@ -126,7 +180,11 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="block hover:text-amber-200 text-lg"
+                  className={`block text-lg font-medium transition-colors
+                    ${isActive('/contact') 
+                      ? 'text-amber-800' 
+                      : 'text-gray-600 hover:text-amber-800'
+                    }`}
                   onClick={closeMenu}
                 >
                   Contact
