@@ -1,0 +1,63 @@
+{
+  "projectRules": {
+    "codeStyle": {
+      "language": "TypeScript",
+      "framework": "React",
+      "styling": "Tailwind CSS",
+      "componentStyle": "functional",
+      "naming": {
+        "components": "PascalCase",
+        "variables": "camelCase",
+        "constants": "UPPER_SNAKE_CASE"
+      },
+      "maxLineLength": 100
+    },
+    "fileOrganization": {
+      "componentPerFile": true,
+      "featureBasedFolders": true,
+      "structure": {
+        "components": "/src/components",
+        "pages": "/src/pages",
+        "hooks": "/src/hooks",
+        "types": "/src/types",
+        "utils": "/src/utils",
+        "services": "/src/services",
+        "assets": "/src/assets"
+      }
+    },
+    "gitPractices": {
+      "commitMessages": {
+        "language": "English",
+        "format": "conventional"
+      },
+      "branching": {
+        "mainBranch": "main",
+        "branchNaming": {
+          "feature": "feature/",
+          "bugfix": "bugfix/",
+          "hotfix": "hotfix/"
+        }
+      }
+    }
+  },
+  "aiInstructions": {
+    "commitMessages": "Always use English and follow conventional commit format",
+    "codeGeneration": "Use TypeScript and functional React components with hooks",
+    "documentation": "Add JSDoc comments for complex functions and components",
+    "componentStructure": "Follow the standard React component structure with imports, types, hooks, and render",
+    "styling": "Use Tailwind CSS classes for styling, prefer utility classes over custom CSS",
+    "accessibility": "Include semantic HTML and ARIA attributes where appropriate",
+    "performance": "Consider performance implications when generating code, use React.memo for expensive components"
+  },
+  "projectContext": {
+    "name": "Echo de Charbonnières",
+    "type": "Orchestre harmonique website",
+    "target": "Public website for the orchestra",
+    "keyFeatures": [
+      "Présentation de l'orchestre",
+      "Calendrier des événements",
+      "Informations sur les musiciens",
+      "Contact et réservations"
+    ]
+  }
+} 
