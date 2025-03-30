@@ -1,6 +1,6 @@
 # Site Web de l'Orchestre Harmonique l'Écho de Charbonnières
 
-**⚠️  Projet en cours de développement - Certaines décisions ne sont pas encore finalisées. ⚠️**
+**⚠️ Projet en cours de développement - Certaines décisions ne sont pas encore finalisées. ⚠️**
 
 ## Description
 
@@ -10,36 +10,36 @@ Ce projet est la refonte en React du site web de l'orchestre harmonique l'Écho 
 
 L'ancien site web peut présenter des limitations en termes de design, de fonctionnalités ou de facilité de mise à jour. Cette refonte en utilisant React, TypeScript et Vite vise à :
 
-*   **Moderniser l'image de l'orchestre** avec un design actuel et une expérience utilisateur fluide.
-*   **Fournir des informations complètes et à jour** sur l'orchestre (histoire, répertoire, musiciens).
-*   **Mettre en avant les événements à venir** (concerts, répétitions publiques, etc.) avec des détails pertinents (date, heure, lieu, programme).
-*   **Offrir des moyens de contact** pour les réservations, les demandes d'adhésion ou les renseignements.
-*   **Potentiellement intégrer des éléments multimédias** (extraits musicaux, photos, vidéos) via les réseaux sociaux.
-*   **Faciliter la gestion du contenu** pour les membres de l'orchestre avec un système d'administration basique.
+- **Moderniser l'image de l'orchestre** avec un design actuel et une expérience utilisateur fluide.
+- **Fournir des informations complètes et à jour** sur l'orchestre (histoire, répertoire, musiciens).
+- **Mettre en avant les événements à venir** (concerts, répétitions publiques, etc.) avec des détails pertinents (date, heure, lieu, programme).
+- **Offrir des moyens de contact** pour les réservations, les demandes d'adhésion ou les renseignements.
+- **Potentiellement intégrer des éléments multimédias** (extraits musicaux, photos, vidéos) via les réseaux sociaux.
+- **Faciliter la gestion du contenu** pour les membres de l'orchestre avec un système d'administration basique.
 
 ## Technologies Principales
 
-*   **Framework Front-end :** React
-*   **Langage :** TypeScript
-*   **Outil de Build :** Vite
-*   **Styling :** Tailwind CSS
-*   **Gestion de Version :** Git et GitHub
+- **Framework Front-end :** React
+- **Langage :** TypeScript
+- **Outil de Build :** Vite
+- **Styling :** Tailwind CSS
+- **Gestion de Version :** Git et GitHub
 
 ## Fonctionnalités Clés (Initiales)
 
-*   **Page d'Accueil :** Présentation générale de l'orchestre, prochains événements marquants.
-*   **Page "À Propos" (ou "L'Orchestre") :** Histoire de l'orchestre, informations sur le chef d'orchestre, les sections instrumentales, etc.
-*   **Page "Musiciens" :** Présentation des membres de l'orchestre (facultatif, peut être sous forme de liste ou plus détaillée).
-*   **Page "Concerts et Événements" :** Calendrier des événements à venir avec les détails (date, heure, lieu, programme, billetterie si applicable).
-*   **Page "Répertoire" (Facultatif) :** Liste des œuvres jouées par l'orchestre. *L'inclusion de cette page est encore en discussion.*
-*   **Page "Contact" :** Formulaire de contact ou informations pour joindre l'orchestre (adresse e-mail, téléphone).
-*   **Galerie Multimédia (Facultatif) :** Photos et/ou extraits audio/vidéo des performances *L'intégration de la galerie est incertaine pour la première version.*.
+- **Page d'Accueil :** Présentation générale de l'orchestre, prochains événements marquants.
+- **Page "À Propos" (ou "L'Orchestre") :** Histoire de l'orchestre, informations sur le chef d'orchestre, les sections instrumentales, etc.
+- **Page "Musiciens" :** Présentation des membres de l'orchestre (facultatif, peut être sous forme de liste ou plus détaillée).
+- **Page "Concerts et Événements" :** Calendrier des événements à venir avec les détails (date, heure, lieu, programme, billetterie si applicable).
+- **Page "Répertoire" (Facultatif) :** Liste des œuvres jouées par l'orchestre. _L'inclusion de cette page est encore en discussion._
+- **Page "Contact" :** Formulaire de contact ou informations pour joindre l'orchestre (adresse e-mail, téléphone).
+- **Galerie Multimédia (Facultatif) :** Photos et/ou extraits audio/vidéo des performances _L'intégration de la galerie est incertaine pour la première version._.
 
 ## Décisions à Prendre
 
-*   **Page "Musiciens":** Quelle forme donner à cette page ? Liste simple ou fiches détaillées ?
-*   **Page "Répertoire":** Faut-il inclure cette page dans la première version ?
-*   **Galerie Multimédia:** Est-ce que la galerie sera présente dans la première version ?
+- **Page "Musiciens":** Quelle forme donner à cette page ? Liste simple ou fiches détaillées ?
+- **Page "Répertoire":** Faut-il inclure cette page dans la première version ?
+- **Galerie Multimédia:** Est-ce que la galerie sera présente dans la première version ?
 
 ## Étapes Suivantes
 
@@ -72,11 +72,11 @@ echo-de-charbonnieres-react/
 │   ├── App.tsx
 │   ├── main.tsx
 │   ├── components/
-│   │   ├── ... 
+│   │   ├── ...
 │   ├── pages/
 │   │   ├── HomePage.tsx
 │   │   ├── AboutPage.tsx
-│   │   ├── ... 
+│   │   ├── ...
 │   ├── assets/
 │   │   ├── images/
 │   │   ├── ... (autres assets)
@@ -90,6 +90,5 @@ Ce code est la propriété exclusive de Baptiste BOUCHARECHAS.
 
 ## Liens Utiles
 
-* Site web actuel : https://www.echo-de-charbonnieres.fr/
-* GitHub : https://github.com/piirk/echo-de-charbonnieres-react
-
+- Site web actuel : https://www.echo-de-charbonnieres.fr/
+- GitHub : https://github.com/piirk/echo-de-charbonnieres-react
