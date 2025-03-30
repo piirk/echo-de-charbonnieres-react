@@ -30,9 +30,6 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Create _redirects file
-        run: echo "/* /index.html 200" > dist/_redirects
-        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
