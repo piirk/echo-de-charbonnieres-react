@@ -22,7 +22,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <main className="max-w-6xl mx-auto py-12 px-4">
+      <main className="container mx-auto py-12 px-4">
         {/* Prochains événements */}
         <section className="mb-12">
           <h2 className="text-3xl font-serif text-center mb-8">Prochains événements</h2>

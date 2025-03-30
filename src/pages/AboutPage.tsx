@@ -8,7 +8,7 @@ const AboutPage = () => {
         title="À propos de l'orchestre"
         subtitle="Découvrez notre histoire et notre passion pour la musique"
       />
-      <main className="max-w-6xl mx-auto py-12 px-4">
+      <main className="container mx-auto py-12 px-4">
         {/* Introduction */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-8 mb-12">
           <h2 className="text-2xl font-serif mb-4">Notre histoire</h2>

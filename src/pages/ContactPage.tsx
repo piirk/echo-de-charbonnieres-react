@@ -9,7 +9,7 @@ const ContactPage = () => {
         title="Contactez-nous"
         subtitle="Nous sommes là pour répondre à vos questions"
       />
-      <main className="max-w-6xl mx-auto py-12 px-4">
+      <main className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-12 gap-8">
           <div className="md:col-span-7">
             <div className="bg-white shadow-lg rounded-lg p-8">

@@ -50,7 +50,7 @@ const ConcertsPage = () => {
         title="Nos Concerts"
         subtitle="Découvrez nos prochains événements et revivez nos concerts passés"
       />
-      <main className="max-w-6xl mx-auto py-12 px-4">
+      <main className="container mx-auto py-12 px-4">
         {/* Prochains concerts */}
         <section className="mb-12">
           <h2 className="text-2xl font-serif mb-6">Prochains concerts</h2>
