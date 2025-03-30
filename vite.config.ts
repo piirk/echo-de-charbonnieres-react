@@ -9,6 +9,7 @@ const __dirname = dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/echo-de-charbonnieres-react/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
