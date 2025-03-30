@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PageBanner from '../components/PageBanner'
 
 type Concert = {
   id: number
@@ -48,71 +49,66 @@ const ConcertsPage = () => {
   )
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-serif text-center mb-8">Nos Concerts</h1>
+    <div>
+      <PageBanner 
+        title="Nos Concerts"
+        subtitle="Découvrez nos prochains événements et notre programmation"
+      />
 
-      {/* Tabs */}
-      <div className="flex justify-center mb-8">
-        <div className="bg-gray-100 rounded-lg p-1">
-          <button
-            onClick={() => setActiveTab('upcoming')}
-            className={`px-6 py-2 rounded-md transition-colors ${
-              activeTab === 'upcoming'
-                ? 'bg-white text-amber-800 shadow'
-                : 'text-gray-600 hover:text-amber-800'
-            }`}
-          >
-            À venir
-          </button>
-          <button
-            onClick={() => setActiveTab('past')}
-            className={`px-6 py-2 rounded-md transition-colors ${
-              activeTab === 'past'
-                ? 'bg-white text-amber-800 shadow'
-                : 'text-gray-600 hover:text-amber-800'
-            }`}
-          >
-            Passés
-          </button>
-        </div>
-      </div>
-
-      {/* Concerts List */}
-      <div className="space-y-6">
-        {filteredConcerts.map(concert => (
-          <div
-            key={concert.id}
-            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow"
-          >
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-              <div>
-                <h2 className="text-2xl font-semibold mb-2">{concert.title}</h2>
-                <div className="space-y-1 text-gray-600">
-                  <p>
-                    <span className="font-medium">Date :</span> {concert.date}
-                  </p>
-                  <p>
-                    <span className="font-medium">Heure :</span> {concert.time}
-                  </p>
-                  <p>
-                    <span className="font-medium">Lieu :</span> {concert.location}
-                  </p>
-                </div>
-                <p className="mt-4 text-gray-700">{concert.description}</p>
-              </div>
-              <div className="text-right">
-                <div className="inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">
-                  {concert.isPast ? 'Concert passé' : 'Entrée libre'}
-                </div>
-                {!concert.isPast && (
-                  <p className="mt-2 text-sm text-gray-500">
-                    Places disponibles sur place
-                  </p>
-                )}
-              </div>
+      <div className="max-w-4xl mx-auto py-12 px-4">
+        <div className="space-y-8">
+          {/* Prochains concerts */}
+          <section>
+            <h2 className="text-2xl font-serif mb-6">Prochains concerts</h2>
+            <div className="grid gap-6">
+              {concerts
+                .filter(concert => !concert.isPast)
+                .map((concert, index) => (
+                  <div key={index} className="bg-white shadow-lg rounded-lg p-6">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className="text-xl font-semibold text-amber-800 mb-2">{concert.title}</h3>
+                        <p className="text-gray-600 mb-2">{concert.location}</p>
+                        <p className="text-gray-700">{concert.description}</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-lg font-semibold text-amber-800">{concert.date}</div>
+                        <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm mt-2">
+                          À venir
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
-          </div>
-        ))}
+          </section>
+
+          {/* Concerts passés */}
+          <section>
+            <h2 className="text-2xl font-serif mb-6">Concerts passés</h2>
+            <div className="grid gap-6">
+              {concerts
+                .filter(concert => concert.isPast)
+                .map((concert, index) => (
+                  <div key={index} className="bg-gray-50 shadow rounded-lg p-6">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">{concert.title}</h3>
+                        <p className="text-gray-600 mb-2">{concert.location}</p>
+                        <p className="text-gray-700">{concert.description}</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-lg font-semibold text-gray-800">{concert.date}</div>
+                        <div className="inline-block px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm mt-2">
+                          Passé
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </section>
+        </div>
       </div>
 
       {/* Information Box */}

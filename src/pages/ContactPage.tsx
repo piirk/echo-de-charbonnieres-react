@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaUser, FaPaperPlane } from 'react-icons/fa'
+import PageBanner from '../components/PageBanner'
 
 type ContactForm = {
   name: string
@@ -74,16 +75,10 @@ const ContactPage = () => {
 
   return (
     <div>
-      {/* Header avec image de fond */}
-      <div className="relative h-64 bg-amber-900">
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-5xl font-serif mb-4">Contactez-nous</h1>
-            <p className="text-xl">Nous sommes là pour répondre à vos questions</p>
-          </div>
-        </div>
-      </div>
+      <PageBanner 
+        title="Contactez-nous"
+        subtitle="Nous sommes là pour répondre à vos questions"
+      />
 
       {/* Contenu existant */}
       <div className="max-w-6xl mx-auto py-12 px-4">
