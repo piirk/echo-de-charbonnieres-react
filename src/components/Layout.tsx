@@ -1,6 +1,17 @@
 import React, { useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import PageTitle from './PageTitle'
+import {
+  RiMusic2Line,
+  RiMenuLine,
+  RiCloseLine,
+  RiMailLine,
+  RiPhoneLine,
+  RiMapPinLine,
+  RiTimeLine,
+  RiFacebookLine,
+  RiInstagramLine,
+} from 'react-icons/ri'
 
 const Layout: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,7 +46,8 @@ const Layout: React.FC = () => {
       <header className="bg-amber-800 text-white">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-serif">
+            <Link to="/" className="text-2xl font-serif flex items-center gap-2">
+              <RiMusic2Line className="w-8 h-8" />
               L'Écho de Charbonnières
             </Link>
             
@@ -45,49 +57,32 @@ const Layout: React.FC = () => {
               className="md:hidden p-2 hover:bg-amber-700 rounded-lg"
               aria-label="Menu"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
+              {isMenuOpen ? (
+                <RiCloseLine className="w-6 h-6" />
+              ) : (
+                <RiMenuLine className="w-6 h-6" />
+              )}
             </button>
 
             {/* Menu desktop */}
-            <ul className="hidden md:flex space-x-6">
+            <ul className="hidden md:flex space-x-8">
               <li>
-                <Link to="/" className="hover:text-amber-200">
+                <Link to="/" className="hover:text-amber-200 text-lg">
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-amber-200">
+                <Link to="/about" className="hover:text-amber-200 text-lg">
                   L'orchestre
                 </Link>
               </li>
               <li>
-                <Link to="/concerts" className="hover:text-amber-200">
+                <Link to="/concerts" className="hover:text-amber-200 text-lg">
                   Concerts
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-amber-200">
+                <Link to="/contact" className="hover:text-amber-200 text-lg">
                   Contact
                 </Link>
               </li>
@@ -104,7 +99,7 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/"
-                  className="block hover:text-amber-200"
+                  className="block hover:text-amber-200 text-lg"
                   onClick={closeMenu}
                 >
                   Accueil
@@ -113,7 +108,7 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/about"
-                  className="block hover:text-amber-200"
+                  className="block hover:text-amber-200 text-lg"
                   onClick={closeMenu}
                 >
                   L'orchestre
@@ -122,7 +117,7 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/concerts"
-                  className="block hover:text-amber-200"
+                  className="block hover:text-amber-200 text-lg"
                   onClick={closeMenu}
                 >
                   Concerts
@@ -131,7 +126,7 @@ const Layout: React.FC = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="block hover:text-amber-200"
+                  className="block hover:text-amber-200 text-lg"
                   onClick={closeMenu}
                 >
                   Contact
@@ -157,18 +152,34 @@ const Layout: React.FC = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <p className="text-gray-300">
-                Email: contact@echodecharbonnieres.fr<br />
-                Tél: 01 23 45 67 89
-              </p>
+              <div className="space-y-2 text-gray-300">
+                <p className="flex items-center gap-2">
+                  <RiMailLine className="w-5 h-5" />
+                  contact@echodecharbonnieres.fr
+                </p>
+                <p className="flex items-center gap-2">
+                  <RiPhoneLine className="w-5 h-5" />
+                  01 23 45 67 89
+                </p>
+                <p className="flex items-center gap-2">
+                  <RiMapPinLine className="w-5 h-5" />
+                  123 rue de la Musique, Charbonnières
+                </p>
+                <p className="flex items-center gap-2">
+                  <RiTimeLine className="w-5 h-5" />
+                  Répétitions : Mardis 20h-22h
+                </p>
+              </div>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Suivez-nous</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-gray-300 hover:text-white flex items-center gap-2">
+                  <RiFacebookLine className="w-5 h-5" />
                   Facebook
                 </a>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="text-gray-300 hover:text-white flex items-center gap-2">
+                  <RiInstagramLine className="w-5 h-5" />
                   Instagram
                 </a>
               </div>
